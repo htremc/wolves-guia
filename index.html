@@ -5,10 +5,10 @@
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 <meta name="robots" content="noindex, nofollow">
 <title>Guía de ventas · Wolves of WEBstreet</title>
-<meta name="description" content="La guía de ventas del equipo Wolves of WEBstreet × COMPOUND: 8 capítulos para aprender a sacar reuniones.">
+<meta name="description" content="La guía de ventas del equipo Wolves of WEBstreet × COMPOUND: el vídeo de bienvenida y 8 capítulos para aprender a sacar reuniones.">
 <meta property="og:type" content="website">
 <meta property="og:title" content="Guía de ventas · Wolves of WEBstreet">
-<meta property="og:description" content="Bienvenido a WEBstreet. 8 capítulos para aprender a sacar reuniones.">
+<meta property="og:description" content="Bienvenido a WEBstreet. El vídeo de bienvenida y 8 capítulos para aprender a sacar reuniones.">
 <meta property="og:image" content="https://htremc.github.io/wolves-guia/logo/escudo-og.jpg">
 <meta name="theme-color" content="#06100c">
 <link rel="icon" href="logo/escudo-og.jpg">
@@ -16,7 +16,7 @@
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Big+Shoulders+Display:wght@800;900&family=Schibsted+Grotesk:wght@400;600;700&family=IBM+Plex+Mono:wght@500;600&display=swap">
 <style>
-/* La misma mirada oscura de la guía: entrada con el escudo y debajo la guía entera */
+/* La misma mirada oscura de la guía: entrada con el vídeo de bienvenida en vertical y debajo la guía entera */
 :root {
   color-scheme: dark;
   --bg: #06100c; --panel: #0f2119; --line: #21402f; --ink: #eef5ef; --muted: #a5bbae; --gold: #f1c45a;
@@ -30,10 +30,12 @@ body { margin: 0; color: var(--ink); font: 16px/1.55 var(--f-body); -webkit-text
   padding-left: max(16px, env(safe-area-inset-left, 0px)); padding-right: max(16px, env(safe-area-inset-right, 0px));
   padding-top: max(22px, env(safe-area-inset-top, 0px)); padding-bottom: max(40px, env(safe-area-inset-bottom, 0px)); }
 .wrap { max-width: 1100px; margin: 0 auto; display: grid; gap: 22px; }
-.entrada { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 300px); gap: 22px; align-items: center;
+.entrada { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 340px); gap: 22px; align-items: center;
   padding: clamp(18px, 3vw, 30px); border-radius: 22px; border: 1px solid var(--line);
   background: radial-gradient(70% 90% at 90% 20%, rgba(241, 196, 90, .14), transparent 60%), var(--panel); }
 .txt { display: grid; gap: 12px; min-width: 0; }
+.marca { display: flex; align-items: center; gap: 12px; }
+.marca img { width: 54px; height: auto; flex: none; }
 .eyebrow { font: 600 12px/1.35 var(--f-mono); letter-spacing: .14em; text-transform: uppercase; color: var(--gold); margin: 0; }
 h1 { margin: 0; font: 900 clamp(44px, 7vw, 82px)/.88 var(--f-display); text-transform: uppercase; text-wrap: balance; }
 h1 span { color: var(--gold); display: block; }
@@ -41,13 +43,16 @@ h1 span { color: var(--gold); display: block; }
 .pasos { margin: 0; padding: 0; list-style: none; display: grid; gap: 8px; }
 .pasos li { display: flex; gap: 10px; align-items: baseline; }
 .pasos b.n { font: 900 22px/1 var(--f-display); color: var(--gold); min-width: 1.2ch; }
-.escudo { justify-self: center; width: 100%; max-width: 260px; height: auto; filter: drop-shadow(0 18px 30px rgba(0, 0, 0, .6)); }
+.video { position: relative; justify-self: center; width: 100%; max-width: 340px; aspect-ratio: 9 / 16; border-radius: 18px; overflow: hidden;
+  border: 1px solid rgba(241, 196, 90, .45); background: #000; box-shadow: 0 24px 60px -30px rgba(0, 0, 0, .9); }
+.video video { width: 100%; height: 100%; display: block; object-fit: cover; background: #000; }
+.video small { position: absolute; left: 10px; top: 10px; padding: 4px 9px; border-radius: 999px; background: rgba(6, 16, 12, .8); font: 600 11px/1.2 var(--f-mono); letter-spacing: .08em; text-transform: uppercase; color: var(--gold); pointer-events: none; }
 .fin { padding: 18px 20px; border-radius: 18px; border: 1px dashed rgba(241, 196, 90, .5); color: var(--muted); }
 .fin b { color: var(--ink); }
 .fin p { margin: 0; max-width: 70ch; }
 @media (max-width: 760px) {
   .entrada { grid-template-columns: 1fr; }
-  .escudo { order: -1; max-width: 150px; }
+  .video { max-width: 300px; }
 }
 </style>
 </head>
@@ -55,16 +60,19 @@ h1 span { color: var(--gold); display: block; }
 <div class="wrap">
   <header class="entrada">
     <div class="txt">
-      <p class="eyebrow">Wolves of WEBstreet × COMPOUND · Guía de ventas</p>
+      <div class="marca"><img src="logo/escudo.png" alt="Escudo de Wolves of WEBstreet, el equipo de ventas de COMPOUND" width="54" height="65" decoding="async"><p class="eyebrow">Wolves of WEBstreet × COMPOUND · Guía de ventas</p></div>
       <h1>Bienvenido a <span>WEBstreet</span></h1>
-      <p class="lead">Si estás aquí es porque vas a pasar a la acción. Esta es tu guía de ventas: todo lo que necesitas para sacar tus primeras reuniones.</p>
+      <p class="lead">Si estás aquí es porque vas a pasar a la acción. Empieza por el vídeo y después lee la guía: es todo lo que necesitas para sacar tus primeras reuniones.</p>
       <ol class="pasos">
-        <li><b class="n">1</b><span><b>Mira el vídeo de bienvenida</b>: te lo ha mandado Héctor por WhatsApp.</span></li>
+        <li><b class="n">1</b><span><b>Mira el vídeo</b> (4 minutos), con sonido.</span></li>
         <li><b class="n">2</b><span><b>Lee la guía</b>, aquí debajo: 8 capítulos cortos.</span></li>
         <li><b class="n">3</b><span><b>Entra en la app</b> con el enlace personal que te manda Héctor y haz la Prueba 1.</span></li>
       </ol>
     </div>
-    <img class="escudo" src="logo/escudo.png" alt="Escudo de Wolves of WEBstreet, el equipo de ventas de COMPOUND" width="571" height="691" decoding="async">
+    <div class="video">
+      <video controls playsinline preload="metadata" poster="video/portada.jpg" src="video/bienvenida.mp4" aria-label="Vídeo de bienvenida a Wolves of WEBstreet"></video>
+      <small>Vídeo · 4 min</small>
+    </div>
   </header>
 
   <div id="guia"><p class="lead">Cargando la guía…</p></div>
