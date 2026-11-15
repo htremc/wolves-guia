@@ -47,9 +47,11 @@ h1 span { color: var(--gold); display: block; }
   border: 1px solid rgba(241, 196, 90, .45); background: #000; box-shadow: 0 24px 60px -30px rgba(0, 0, 0, .9); }
 .video video { width: 100%; height: 100%; display: block; object-fit: cover; background: #000; }
 .video small { position: absolute; left: 10px; top: 10px; padding: 4px 9px; border-radius: 999px; background: rgba(6, 16, 12, .8); font: 600 11px/1.2 var(--f-mono); letter-spacing: .08em; text-transform: uppercase; color: var(--gold); pointer-events: none; }
-.fin { padding: 18px 20px; border-radius: 18px; border: 1px dashed rgba(241, 196, 90, .5); color: var(--muted); }
+.fin { display: grid; gap: 12px; padding: clamp(18px, 3vw, 26px); border-radius: 18px; border: 1px dashed rgba(241, 196, 90, .5); color: var(--muted); }
 .fin b { color: var(--ink); }
 .fin p { margin: 0; max-width: 70ch; }
+.fin h2 { margin: 0; color: var(--ink); font: 900 clamp(28px, 4vw, 40px)/.95 var(--f-display); text-transform: uppercase; text-wrap: balance; }
+.fin .pasos li span { min-width: 0; }
 @media (max-width: 760px) {
   .entrada { grid-template-columns: 1fr; }
   .video { max-width: 300px; }
@@ -66,7 +68,7 @@ h1 span { color: var(--gold); display: block; }
       <ol class="pasos">
         <li><b class="n">1</b><span><b>Mira el vídeo</b> (4 minutos), con sonido.</span></li>
         <li><b class="n">2</b><span><b>Lee la guía</b>, aquí debajo: 8 capítulos cortos.</span></li>
-        <li><b class="n">3</b><span><b>Entra en la app</b> con el enlace personal que te manda Héctor y haz la Prueba 1.</span></li>
+        <li><b class="n">3</b><span><b>Entra en la app</b> con el enlace personal que te manda Héctor y haz la Prueba 1 (abajo del todo, cómo entrar).</span></li>
       </ol>
     </div>
     <div class="video">
@@ -77,7 +79,16 @@ h1 span { color: var(--gold); display: block; }
 
   <div id="guia"><p class="lead">Cargando la guía…</p></div>
 
-  <div class="fin"><p><b>¿Y después?</b> Héctor te manda por WhatsApp tu enlace personal a la app. Allí está la misma guía (marca «Lo tengo» en cada capítulo), la Prueba 1 con la IA y, cuando apruebes las dos pruebas, tu mesa con 60 negocios para llamar.</p></div>
+  <section class="fin" id="entrar" aria-labelledby="entrar-tit">
+    <p class="eyebrow">Después de la guía</p>
+    <h2 id="entrar-tit">Cómo entrar en la app y hacer la Prueba 1</h2>
+    <ol class="pasos">
+      <li><b class="n">1</b><span><b>Abre tu enlace personal</b>, el que te manda Héctor por WhatsApp. La app es privada: sin ese enlace no se abre.</span></li>
+      <li><b class="n">2</b><span><b>Entra con la cuenta de Google</b> del correo que le diste a Héctor y pulsa <b>«Aceptar y abrir»</b>. Solo la primera vez.</span></li>
+      <li><b class="n">3</b><span>En la pestaña <b>«Prueba 1»</b>, la primera vez que hables con la IA te sale un aviso de claude.ai, «Este artefacto usa conectores». Pulsa <b>«Continuar»</b>. No pagas nada: la IA va con tu cuenta de Claude.</span></li>
+    </ol>
+    <p>En la app tienes la misma guía, la <b>Prueba 1</b> (el sprint de objeciones y dos llamadas de práctica de 7 o más) y la <b>Prueba 2</b>, una llamada con Héctor. Cuando apruebes las dos, se abre <b>tu mesa con 60 negocios</b> para llamar.</p>
+  </section>
 </div>
 
 <script src="guia.js" charset="utf-8"></script>
