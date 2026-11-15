@@ -1,0 +1,114 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="robots" content="noindex, nofollow">
+<title>Guía de ventas · Wolves of WEBstreet</title>
+<meta name="description" content="La guía de ventas del equipo Wolves of WEBstreet × COMPOUND: 8 capítulos para aprender a sacar reuniones.">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Guía de ventas · Wolves of WEBstreet">
+<meta property="og:description" content="Bienvenido a WEBstreet. 8 capítulos para aprender a sacar reuniones.">
+<meta property="og:image" content="https://htremc.github.io/wolves-guia/logo/escudo-og.jpg">
+<meta name="theme-color" content="#06100c">
+<link rel="icon" href="logo/escudo-og.jpg">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Big+Shoulders+Display:wght@800;900&family=Schibsted+Grotesk:wght@400;600;700&family=IBM+Plex+Mono:wght@500;600&display=swap">
+<style>
+/* La misma mirada oscura de la guía: entrada con el escudo y debajo la guía entera */
+:root {
+  color-scheme: dark;
+  --bg: #06100c; --panel: #0f2119; --line: #21402f; --ink: #eef5ef; --muted: #a5bbae; --gold: #f1c45a;
+  --f-display: "Big Shoulders Display", Impact, "Arial Narrow", sans-serif;
+  --f-body: "Schibsted Grotesk", "Segoe UI", system-ui, -apple-system, sans-serif;
+  --f-mono: "IBM Plex Mono", ui-monospace, Consolas, monospace;
+}
+* { box-sizing: border-box; }
+html, body { background: var(--bg); }
+body { margin: 0; color: var(--ink); font: 16px/1.55 var(--f-body); -webkit-text-size-adjust: 100%;
+  padding-left: max(16px, env(safe-area-inset-left, 0px)); padding-right: max(16px, env(safe-area-inset-right, 0px));
+  padding-top: max(22px, env(safe-area-inset-top, 0px)); padding-bottom: max(40px, env(safe-area-inset-bottom, 0px)); }
+.wrap { max-width: 1100px; margin: 0 auto; display: grid; gap: 22px; }
+.entrada { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 300px); gap: 22px; align-items: center;
+  padding: clamp(18px, 3vw, 30px); border-radius: 22px; border: 1px solid var(--line);
+  background: radial-gradient(70% 90% at 90% 20%, rgba(241, 196, 90, .14), transparent 60%), var(--panel); }
+.txt { display: grid; gap: 12px; min-width: 0; }
+.eyebrow { font: 600 12px/1.35 var(--f-mono); letter-spacing: .14em; text-transform: uppercase; color: var(--gold); margin: 0; }
+h1 { margin: 0; font: 900 clamp(44px, 7vw, 82px)/.88 var(--f-display); text-transform: uppercase; text-wrap: balance; }
+h1 span { color: var(--gold); display: block; }
+.lead { margin: 0; color: var(--muted); font-size: clamp(16px, 1.7vw, 18.5px); max-width: 52ch; }
+.pasos { margin: 0; padding: 0; list-style: none; display: grid; gap: 8px; }
+.pasos li { display: flex; gap: 10px; align-items: baseline; }
+.pasos b.n { font: 900 22px/1 var(--f-display); color: var(--gold); min-width: 1.2ch; }
+.escudo { justify-self: center; width: 100%; max-width: 260px; height: auto; filter: drop-shadow(0 18px 30px rgba(0, 0, 0, .6)); }
+.fin { padding: 18px 20px; border-radius: 18px; border: 1px dashed rgba(241, 196, 90, .5); color: var(--muted); }
+.fin b { color: var(--ink); }
+.fin p { margin: 0; max-width: 70ch; }
+@media (max-width: 760px) {
+  .entrada { grid-template-columns: 1fr; }
+  .escudo { order: -1; max-width: 150px; }
+}
+</style>
+</head>
+<body>
+<div class="wrap">
+  <header class="entrada">
+    <div class="txt">
+      <p class="eyebrow">Wolves of WEBstreet × COMPOUND · Guía de ventas</p>
+      <h1>Bienvenido a <span>WEBstreet</span></h1>
+      <p class="lead">Si estás aquí es porque vas a pasar a la acción. Esta es tu guía de ventas: todo lo que necesitas para sacar tus primeras reuniones.</p>
+      <ol class="pasos">
+        <li><b class="n">1</b><span><b>Mira el vídeo de bienvenida</b>: te lo ha mandado Héctor por WhatsApp.</span></li>
+        <li><b class="n">2</b><span><b>Lee la guía</b>, aquí debajo: 8 capítulos cortos.</span></li>
+        <li><b class="n">3</b><span><b>Entra en la app</b> con el enlace personal que te manda Héctor y haz la Prueba 1.</span></li>
+      </ol>
+    </div>
+    <img class="escudo" src="logo/escudo.png" alt="Escudo de Wolves of WEBstreet, el equipo de ventas de COMPOUND" width="571" height="691" decoding="async">
+  </header>
+
+  <div id="guia"><p class="lead">Cargando la guía…</p></div>
+
+  <div class="fin"><p><b>¿Y después?</b> Héctor te manda por WhatsApp tu enlace personal a la app. Allí está la misma guía (marca «Lo tengo» en cada capítulo), la Prueba 1 con la IA y, cuando apruebes las dos pruebas, tu mesa con 60 negocios para llamar.</p></div>
+</div>
+
+<script src="guia.js" charset="utf-8"></script>
+<script>
+(function () {
+  const CAPS = ['c-vendemos', 'c-llamada', 'c-ganchos', 'c-objeciones', 'c-mejores', 'c-rojas', 'c-cobras', 'c-pruebas'];
+  // Copia de las condiciones de la app (config/condiciones), decididas por Héctor el 14-nov-2026
+  const CONDICIONES = {
+    titular: '50 % del beneficio de cada venta',
+    estado: 'decidido',
+    puntos: [
+      'Cobras el 50 % del beneficio de cada venta que Héctor cierre en una reunión que hayas agendado tú. Beneficio = lo que paga el cliente menos los gastos y los impuestos de esa venta.',
+      'Cuenta cuando la reunión se reservó desde tu mesa, el dueño se conectó, la venta se cerró entera y el dinero ya ha entrado en COMPOUND. Entonces se calcula el beneficio y tu comisión.',
+      'Vale para ventas de hasta 3.000 €. Si una venta pasa de 3.000 €, Héctor habla contigo de cómo se reparte.',
+      'Monta tu manada: puedes traer a colegas tuyos para que llamen como tú, si pasan las dos pruebas. Sus ventas cuentan como tuyas: COMPOUND te paga a ti el 50 % del beneficio y tú repartes con ellos lo que hayáis acordado. Nadie paga nada por entrar: todo sale de ventas de verdad.',
+      'El precio de cada venta depende de lo que necesite cada cliente: por eso no se da precio por teléfono.',
+      'Para cobrar, cuando cierres tu primera venta te das de alta en Hacienda (modelo 036, es gratis) y le haces una factura a COMPOUND. Te ayudamos a hacerlo.',
+    ],
+  };
+  const CLAVE = 'guia-webstreet-leidos';
+  let leidos = [];
+  try { leidos = JSON.parse(localStorage.getItem(CLAVE) || '[]').filter(x => CAPS.includes(x)); } catch (e) { leidos = []; }
+  const el = document.getElementById('guia');
+  if (!window.WolvesGuia || !window.WolvesGuia.montar) { el.innerHTML = '<p class="lead">La guía no ha cargado. Recarga la página.</p>'; return; }
+  try {
+    window.WolvesGuia.montar(el, {
+      capitulos: CAPS, leidos, condiciones: CONDICIONES, logo: 'logo/escudo.png', lobo: 'logo/lobo-cabeza.png',
+      modo: 'suelta', enlaceApp: 'https://claude.ai/artifact/G2DcJqCGnLqhXx1KSaiufz',
+      onLeido(id) {
+        if (!leidos.includes(id)) leidos.push(id);
+        try { localStorage.setItem(CLAVE, JSON.stringify(leidos)); } catch (e) { /* sin almacenamiento: el avance dura mientras la página esté abierta */ }
+        window.WolvesGuia.actualizar({ leidos: leidos.slice() });
+      },
+    });
+  } catch (err) {
+    console.error(err);
+    el.innerHTML = '<p class="lead">La guía no ha podido arrancar en este navegador. Recarga la página.</p>';
+  }
+})();
+</script>
+</body>
+</html>
