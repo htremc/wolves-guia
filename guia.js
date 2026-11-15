@@ -1960,6 +1960,10 @@ color-scheme:dark;position:relative;isolation:isolate;overflow:hidden;border-rad
 
     pintarGen(); pintarDeck(); pintarQuiz(); pintarCalc(); pintarSim(); pintarMercado();
     pintarProgreso();
+    // cifra y unidad juntas en todo lo que se pinte, ahora y en cada repintado (ver sinCortes)
+    sinCortes(root);
+    S.cortes = new MutationObserver(lista => { lista.forEach(m => sinCortes(m.type === 'characterData' ? m.target.parentNode : m.target)); });
+    S.cortes.observe(root, { childList: true, subtree: true, characterData: true });
     irA(abiertoPrevio && S.orden.includes(abiertoPrevio) ? abiertoPrevio : primerPendiente(), { scroll: false, foco: false });
 
     // héroe
@@ -2001,6 +2005,7 @@ color-scheme:dark;position:relative;isolation:isolate;overflow:hidden;border-rad
     if (!S) return;
     abiertoPrevio = S.abierto;
     S.timers.forEach(t => clearTimeout(t)); S.timers = [];
+    if (S.cortes) S.cortes.disconnect();
     if (S.ui.tl && S.ui.tl.raf) cancelAnimationFrame(S.ui.tl.raf);
     if (S.hero) S.hero.destroy();
     S.root.removeEventListener('click', onClick);
@@ -2228,9 +2233,28 @@ color-scheme:dark;position:relative;isolation:isolate;overflow:hidden;border-rad
   function copiarGen(btn) {
     const out = q('[data-k="gen-txt"]'); if (!out) return;
     const txt = out.textContent;
-    const ok = () => { const o = btn.textContent; btn.textContent = 'Copiada ✓'; S.timers.push(setTimeout(() => { btn.textContent = o; }, 1600)); };
-    const seleccionar = () => { try { const r = document.createRange(); r.selectNodeContents(out); const s = window.getSelection(); s.removeAllRanges(); s.addRange(r); btn.textContent = 'Seleccionada: Ctrl+C'; } catch (e) { /* nada */ } };
-    try { navigator.clipboard.writeText(txt).then(ok, seleccionar); } catch (e) { seleccionar(); }
+    const orig = btn.dataset.txt || (btn.dataset.txt = btn.textContent);
+    let hecho = false;
+    const fin = t => { if (hecho) return; hecho = true; btn.textContent = t; S.timers.push(setTimeout(() => { btn.textContent = orig; }, 2200)); };
+    const ok = () => fin('Copiada ✓');
+    // Si el portapapeles no deja, o no contesta en 1,5 s, se selecciona la frase para copiarla a mano (móvil u ordenador).
+    const seleccionar = () => { if (hecho) return; try { const r = document.createRange(); r.selectNodeContents(out); const s = window.getSelection(); s.removeAllRanges(); s.addRange(r); } catch (e) { /* nada */ } fin('Seleccionada: cópiala'); };
+    try { navigator.clipboard.writeText(txt).then(ok, seleccionar); S.timers.push(setTimeout(seleccionar, 1500)); } catch (e) { seleccionar(); }
+  }
+
+  // «50 %», «3.000 €»: la cifra y su unidad siempre en la misma línea. Al pintar, el espacio entre las dos se vuelve
+  // de no separación; en el fuente se queda el espacio normal, para que «50 %» se siga encontrando al buscarlo.
+  const NBSP = String.fromCharCode(160);
+  const RE_CORTE = /(\d) ([%€])/g;
+  function sinCortes(raiz) {
+    if (!raiz || !raiz.ownerDocument) return;
+    const w = document.createTreeWalker(raiz, NodeFilter.SHOW_TEXT);
+    for (let n = w.nextNode(); n; n = w.nextNode()) {
+      const v = n.nodeValue;
+      if (v.indexOf(' %') < 0 && v.indexOf(' €') < 0) continue;
+      const nv = v.replace(RE_CORTE, '$1' + NBSP + '$2');
+      if (nv !== v) n.nodeValue = nv;
+    }
   }
 
   // ── c-objeciones ──
