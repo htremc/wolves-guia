@@ -76,7 +76,7 @@
   const OBJ = [
     { o: 'Ahora no puedo, estoy con un cliente.', tag: 'Reflejo',
       verdad: 'Puede ser verdad (está trabajando) o un reflejo para quitarte de encima. En los dos casos, no luches contra su tiempo: llévate una hora para volver.',
-      di: '«Perdona, te dejo trabajar. ¿Te llamo mañana a primera hora o a las 5, cuando tengas un hueco?»',
+      di: '«Claro, te dejo trabajar. Es sobre la web que os estamos preparando con vuestras reseñas: ¿te llamo mañana a las 10 o a las 5?»',
       extra: 'Si te da pie: «Te robo 20 segundos y te dejo trabajar», y vas al grano.',
       bien: 'Respetas su tiempo y te llevas una hora concreta para volver a llamar.',
       mal: [['«Es solo un minuto, de verdad. Mira, hacemos webs para negocios como el tuyo y…»', 'No respetas su tiempo y le sueltas el rollo: se cierra en banda.'],
